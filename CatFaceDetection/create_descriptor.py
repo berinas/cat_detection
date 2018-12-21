@@ -4,8 +4,10 @@ import numpy as np
 from PIL import Image
 from skimage.feature import hog
 from save_image import saveImage
+from resizeimage import resizeimage
 
 def createDescriptor(image):
+    image = resizeimage.resize_cover(image, [100, 100])
     gray = cv2.cvtColor(np.array(image), cv2.COLOR_BGR2GRAY)
     fd, hog_image = hog(gray, orientations=8, pixels_per_cell=(16, 16), cells_per_block=(4, 4), block_norm='L2', visualize=True)
     return fd, hog_image

@@ -1,22 +1,37 @@
-'''import cv2
+import cv2
 import os
 from PIL import Image
-
-svm = cv2.ml.SVM_create() # Set up SVM for OpenCV 3
-svm.setType(cv2.ml.SVM_C_SVC) # Set SVM type
-svm.setKernel(cv2.ml.SVM_RBF) # Set SVM Kernel to Radial Basis Function (RBF)
-svm.setC(12.5) # Set parameter C
-svm.setGamma(0.50625) # Set parameter Gamma
+from create_descriptor import *
+from sklearn import svm
+from skimage.feature import hog
+from sklearn.externals import joblib
 
 trainData = []
+labels = []
 valid_images = [".jpg",".jpeg"]
-br = 1
 
 for f in os.listdir('C:/Users/Berina/Desktop/cat_detection/train'):
-    ext = os.path.splitext(f)[1]
+    name, ext = os.path.splitext(f)
     if ext.lower() not in valid_images:
         continue
+    if 1 <= int(name) <= 20:
+        labels.append(1)
+    else:
+        labels.append(0)
     image = Image.open(os.path.join('C:/Users/Berina/Desktop/cat_detection/train',f))
-    trainData.append(image)
-    br += 1'''
+    hf, hi = createDescriptor(image)
+    trainData.append(hf)
+
+#treniranje modela
+clf = svm.SVC(kernel='linear', C=1.0)
+clf.fit(np.array(trainData), labels)
+
+# save the model to disk
+filename = 'finalized_model.sav'
+joblib.dump(clf, filename)
+
+
+
+
+
 
