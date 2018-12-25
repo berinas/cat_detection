@@ -3,6 +3,7 @@ import os
 import numpy as np
 from PIL import Image
 import cv2
+from path import start
 from save_image import saveImage
 
 def histogramEq(image):
@@ -13,7 +14,7 @@ def histogramEq(image):
     img_eq = np.interp(data, bins[:-1], cdf)
     return img_eq.reshape(image.shape)
 
-path = 'C:/Users/Berina/Desktop/cat_detection/dataset'
+path = start + 'dataset'
 valid_images = [".jpg",".jpeg"]
 br = 1
 
@@ -26,7 +27,7 @@ for f in os.listdir(path):
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     new_image = histogramEq(image)
 
-    newpath = 'C:/Users/Berina/Desktop/cat_detection/ujednacavanje_histograma'
+    newpath = start + 'ujednacavanje_histograma'
     saveImage(np.array(new_image), newpath, str(br) + ext.lower())
     br += 1
 

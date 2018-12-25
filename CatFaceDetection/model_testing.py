@@ -4,15 +4,15 @@ from PIL import Image
 from create_descriptor import *
 from model_training import *
 from sklearn import *
+from path import start
 from sklearn.metrics import accuracy_score
 from sklearn.externals import joblib
 
-
 testData = []
 labels = []
-valid_images = [".jpg",".jpeg"]
+valid_images = [".jpg", ".jpeg"]
 
-for f in os.listdir('C:/Users/Berina/Desktop/cat_detection/test'):
+for f in os.listdir(start + 'test'):
     name, ext = os.path.splitext(f)
     if ext.lower() not in valid_images:
         continue
@@ -20,7 +20,7 @@ for f in os.listdir('C:/Users/Berina/Desktop/cat_detection/test'):
         labels.append(1)
     else:
         labels.append(0)
-    image = Image.open(os.path.join('C:/Users/Berina/Desktop/cat_detection/test',f))
+    image = Image.open(os.path.join(start + 'test', f))
     hf, hi = createDescriptor(image)
     testData.append(hf)
 
@@ -33,15 +33,8 @@ print("Confusion matrix:\n%s" % conf)
 acc = accuracy_score(y_pred, labels)
 print("Accuracy: {}".format(acc))
 
-sensitivity1 = conf[0,0]/(conf[0,0]+conf[0,1])
+sensitivity1 = conf[0, 0] / (conf[0, 0] + conf[0, 1])
 print('Sensitivity : ', sensitivity1)
 
-specificity1 = conf[1,1]/(conf[1,0]+conf[1,1])
+specificity1 = conf[1, 1] / (conf[1, 0] + conf[1, 1])
 print('Specificity : ', specificity1)
-
-
-
-
-
-
-

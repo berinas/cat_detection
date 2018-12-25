@@ -1,0 +1,1 @@
+start = 'C:/Users/lejla/Desktop/cat_detection/'

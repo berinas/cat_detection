@@ -4,12 +4,13 @@ from PIL import Image
 from create_descriptor import *
 from sklearn import svm
 from skimage.feature import hog
+from path import start
 
 trainData = []
 labels = []
 valid_images = [".jpg",".jpeg"]
 
-for f in os.listdir('C:/Users/Berina/Desktop/cat_detection/train'):
+for f in os.listdir(start + 'train'):
     name, ext = os.path.splitext(f)
     if ext.lower() not in valid_images:
         continue
@@ -17,7 +18,7 @@ for f in os.listdir('C:/Users/Berina/Desktop/cat_detection/train'):
         labels.append(1)
     else:
         labels.append(0)
-    image = Image.open(os.path.join('C:/Users/Berina/Desktop/cat_detection/train',f))
+    image = Image.open(os.path.join(start + 'train',f))
     hf, hi = createDescriptor(image)
     trainData.append(hf)
 

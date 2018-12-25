@@ -3,10 +3,11 @@ from save_image import saveImage
 import os
 import numpy as np
 from PIL import Image
+from path import start
 import random
 import cv2
 
-path_cat = 'C:/Users/Berina/Desktop/cat_detection/dataset'
+path_cat = start + 'dataset'
 valid_images = [".jpg",".jpeg"]
 image_list = []
 
@@ -23,10 +24,10 @@ random.shuffle(image_list)
 train_data ,test_data = train_test_split(image_list, test_size=0.8)
 
 for img in train_data:
-    newpath = 'C:/Users/Berina/Desktop/cat_detection/train'
+    newpath = start + 'train'
     saveImage(cv2.cvtColor(np.array(img[0]), cv2.COLOR_BGR2RGB), newpath, img[1] + ".jpg")
 
 for img in test_data:
-    newpath = 'C:/Users/Berina/Desktop/cat_detection/test'
+    newpath = start + 'test'
     saveImage(cv2.cvtColor(np.array(img[0]), cv2.COLOR_BGR2RGB), newpath, img[1] + ".jpg")
 

@@ -4,32 +4,33 @@ import xlrd
 import os
 from save_image import saveImage
 from PIL import Image
+from path import start
 
 
 def useMask(img, mask):
     return cv2.bitwise_and(img, mask)
 
+
 def cropMask(imgName, upLeft, bottomRight, upRight, bottomLeft):
-    image = Image.open("C:/Users/Berina/Desktop/cat_detection/klase/cat/" + imgName)
-    path1 = 'C:/Users/Berina/Desktop/cat_detection/cropped_masks'
+    image = Image.open(start + "klase/cat/" + imgName)
+    path1 = start + 'cropped_masks'
 
     cropped = image.crop((upLeft[0], upLeft[1], bottomRight[0], bottomRight[1]))
     cropped.save(path1 + "/" + imgName)
 
+
 def createAndApplyMask(imgName, upLeft, bottomRight):
+    img = cv2.imread(start + "klase/cat/" + imgName)  # učitavanja originalne slike
+    mask = np.zeros(img.shape, dtype="uint8")  # kreiranje crne slike (maske)
+    cv2.rectangle(mask, upLeft, bottomRight, (255, 255, 255), -1)  # crtanje bijelog popunjenog pravougaonika na maski
 
-    img = cv2.imread("C:/Users/Berina/Desktop/cat_detection/klase/cat/" + imgName)  # učitavanja originalne slike
-    mask = np.zeros(img.shape, dtype="uint8")                                       # kreiranje crne slike (maske)
-    cv2.rectangle(mask, upLeft, bottomRight, (255, 255, 255), -1)                   # crtanje bijelog popunjenog pravougaonika na maski
+    maskedImg = useMask(img, mask)  # primijeni masku na sliku
 
-    maskedImg = useMask(img, mask)                                                  # primijeni masku na sliku
-
-    path = 'C:/Users/Berina/Desktop/cat_detection/maske'
+    path = start + 'maske'
     saveImage(maskedImg, path, imgName)
 
 
-
-src = 'C:/Users/Berina/Desktop/cat_detection/anotacije.xlsx'
+src = start + 'anotacije.xlsx'
 book = xlrd.open_workbook(src)
 work_sheet = book.sheet_by_index(0)
 num_rows = work_sheet.nrows
