@@ -1,1 +1,1 @@
-start = 'C:/Users/lejla/Desktop/cat_detection/'
+start = 'C:/Users/berina/Desktop/cat_detection/'
