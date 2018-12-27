@@ -2,12 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e183b81-e0dd-41fb-96bb-260c6cfd0403" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model.sav" beforeDir="false" afterPath="$PROJECT_DIR$/model.sav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_training.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_training.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/path.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../slike_finalnaValidacija/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../slike_finalnaValidacija/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../slike_finalnaValidacija/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../slike_finalnaValidacija/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../train/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../train/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../train/12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../train/13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../train/14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../train/16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../train/17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../train/18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../train/2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../train/5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../train/6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../train/8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../train/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../train/9.jpg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,23 +30,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="57" column="30" lean-forward="true" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
+            <state relative-caret-position="210">
+              <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
               <folding>
-                <element signature="e#0#27#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/path.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="24" selection-start-column="24" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -74,8 +78,8 @@
         <option value="$PROJECT_DIR$/model_training.py" />
         <option value="$PROJECT_DIR$/model_testing.py" />
         <option value="$PROJECT_DIR$/poboljsavanje_slika.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/path.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -91,7 +95,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -103,6 +106,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -252,9 +256,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14805023" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14805023" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -402,16 +405,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model_training.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/poboljsavanje_slika.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -432,20 +425,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/path.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="57" column="30" lean-forward="true" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
+        <state>
+          <caret column="47" selection-start-column="47" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model_training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/path.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        <state relative-caret-position="210">
+          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

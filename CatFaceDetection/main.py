@@ -1,10 +1,5 @@
-from skimage import feature
-from poboljsavanje_slika import poboljsaj
 from model_training import *
-import pickle
 import matplotlib.pyplot as plt
-from resizeimage import resizeimage
-from path import start
 import time
 import cv2
 import os
@@ -13,7 +8,7 @@ from PIL import Image
 from skimage.feature import hog
 from path import start
 import imutils
-
+from resizeimage import resizeimage
 
 def pyramid(image, scale=1.5, minSize=(30, 30)):
     yield image
@@ -56,6 +51,7 @@ def main(path):
         if ext.lower() not in valid_images:
             continue
         image = Image.open(os.path.join(path, f))
+        image = resizeimage.resize_cover(image, [200, 200])
         #new_image = poboljsaj(image)
         new_image = cv2.cvtColor(np.array(image), cv2.COLOR_BGR2GRAY)
         hf, h_image = createDescriptor(image)  # kreiranje deskriptora (HOG)
@@ -63,6 +59,10 @@ def main(path):
 
         indices, patches = zip(*sliding_window(new_image))
         show_slider(new_image)
+
+        imageForSliding = Image.open(os.path.join(path, f))
+        imageForSliding = cv2.cvtColor(np.array(imageForSliding), cv2.COLOR_BGR2GRAY)
+        show_slider(imageForSliding)
 
         patches_hog = np.array([
             hog(patch, orientations=8, pixels_per_cell=(16, 16), cells_per_block=(4, 4), block_norm='L2',
@@ -78,13 +78,27 @@ def main(path):
         indices = np.array(indices)
 
         clone = new_image.copy()
+        upperLeftX = 0
+        upperleftY = 0
+        lowerRightX = 0
+        lowerRightY = 0
+        first = False
         for i, j in indices[labels == 1]:
-            cv2.rectangle(clone, (i, j + 100), (i + 100, j), (0, 255, 0), 3)
-            cv2.rectangle(clone, (i, j + 120), (i + 100, j + 100), (0, 0, 255), cv2.FILLED)
+            if not first:
+                upperLeftX = i
+                upperLeftY = j
+                first = True
+            else:
+                lowerRightX = i
+                lowerRightY = j
+        if first:
+            cv2.rectangle(clone, (upperLeftX, upperLeftY + 100), (lowerRightX + 100, lowerRightY), (0, 255, 0), 3)
+            cv2.rectangle(clone, (upperLeftX, upperLeftY + 120), (lowerRightX + 100, lowerRightY + 100), (0, 0, 255), cv2.FILLED)
             font = cv2.FONT_HERSHEY_DUPLEX
-            cv2.putText(clone, "cat", (i, j + 115), font, 0.5, (255, 255, 255), 1)
+            cv2.putText(clone, "cat", (lowerRightX, lowerRightY + 115), font, 0.5, (255, 255, 255), 1)
+        saveImage(clone, start+'result',f)
         cv2.imshow("Detection", clone)
-        cv2.waitKey(0)
+        cv2.waitKey(1)
 
 
 main(start + 'slike_finalnaValidacija')
